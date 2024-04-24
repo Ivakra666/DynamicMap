@@ -15,7 +15,7 @@ from shapely.geometry import Polygon
 
 # Load your crime data for all months into a DataFrame
 crime_data = pd.read_csv(
-    "/users/tarson/Desktop/Crime in London/Data/Violence_Sexual_Offences_Cleaned.csv",
+    "Map/Violence_Sexual_Offences_Cleaned.csv",
     on_bad_lines="skip",
 )
 crime_data["Month"] = pd.to_datetime(crime_data["Month"])
