@@ -39,14 +39,12 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Run Python application
-      run: python Monthly.py
     - name: Run Bokeh server
       run: bokeh serve --show Monthly.py &
-    - name: Save Bokeh plot as artifact
-      run: bokeh html save Monthly.py Monthly_plot.html
+    - name: Save Bokeh plot as HTML file
+  run: bokeh html Monthly.py -o Monthly_plot.html
     - name: Upload Bokeh plot artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: bokeh-plot
-        path: Monthly_plot.html
+     uses: actions/upload-artifact@v2
+     with:
+     name: bokeh-plot
+     path: Monthly_plot.html
