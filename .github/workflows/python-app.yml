@@ -46,5 +46,5 @@ jobs:
     - name: Upload Bokeh plot artifact
       uses: actions/upload-artifact@v2
       with:
-      name: bokeh-plot-ar
-      path: Monthly_plot.html
+        name: bokeh-plot-om
+        path: Monthly_plot.html
