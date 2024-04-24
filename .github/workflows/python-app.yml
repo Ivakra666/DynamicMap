@@ -45,7 +45,7 @@ jobs:
     - name: Run Streamlit app
       run: streamlit run streamlit_app.py &
     - name: Save Bokeh plot as HTML file
-      run: bokeh export Monthly.py --output Monthly_plot.html
+      run: bokeh build Monthly.py --output Monthly_plot.html
     - name: Upload Bokeh plot artifact
       uses: actions/upload-artifact@v2
       with:
