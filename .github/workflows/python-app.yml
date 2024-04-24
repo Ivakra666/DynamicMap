@@ -43,7 +43,7 @@ jobs:
     - name: Run Bokeh server
       run: bokeh serve --show Monthly.py &
     - name: Run Streamlit app
-      run: streamlit run streamlit_app.py
+      run: streamlit run streamlit_app.py &
     - name: Save Bokeh plot as HTML file
       run: bokeh export Monthly.py --output Monthly_plot.html
     - name: Upload Bokeh plot artifact
