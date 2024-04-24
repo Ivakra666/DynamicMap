@@ -41,4 +41,6 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Run Python application
       run: python Monthly.py
+    - name: Run Bokeh server
+      run: bokeh serve --show Monthly.py
 
