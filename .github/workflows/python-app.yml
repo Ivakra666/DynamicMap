@@ -44,9 +44,19 @@ jobs:
     - name: Run Bokeh server
       run: bokeh serve --show Monthly.py
     - name: Upload Bokeh plot artifact
-    - uses: actions/upload-artifact@v2
+    - name: Run Bokeh server
+      run: |
+       bokeh serve --show Monthly.py
+
+    - name: Save Bokeh plot as artifact
+     run: |
+       bokeh html save Monthly.py Monthly_plot.html
+
+    - name: Upload Bokeh plot artifact
+      uses: actions/upload-artifact@v2
       with:
       name: bokeh-plot
       path: Monthly_plot.html
+
 
 
