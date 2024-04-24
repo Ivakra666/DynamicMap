@@ -42,10 +42,10 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Run Bokeh server
       run: bokeh serve --show Monthly.py &
-    - name: Run Streamlit app
-      run: streamlit run streamlit_app.py &
-    - name: Save Bokeh plot as HTML file
-      run: bokeh build Monthly.py --output Monthly_plot.html
+    - name: Run Python script to generate Bokeh plot and save as HTML
+      run: |
+       python Monthly.py
+       mv Monthly.html Monthly_plot.html
     - name: Upload Bokeh plot artifact
       uses: actions/upload-artifact@v2
       with:
