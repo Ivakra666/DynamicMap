@@ -44,8 +44,7 @@ jobs:
       run: bokeh serve --show Monthly.py &
     - name: Run Python script to generate Bokeh plot and save as HTML
       run: |
-       python Monthly.py
-       mv Monthly.html Monthly_plot.html
+       python Monthly.py > Monthly_plot.html
     - name: Upload Bokeh plot artifact
       uses: actions/upload-artifact@v2
       with:
