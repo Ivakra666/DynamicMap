@@ -50,6 +50,8 @@ jobs:
     - name: Run Python script to generate Bokeh plot and save as HTML
       run: |
        python Monthly.py > Monthly_plot.html
+    - name: Display Monthly_plot.html contents
+      run: cat Monthly_plot.html
     - name: Upload Bokeh plot artifact
       uses: actions/upload-artifact@v4
       with:
